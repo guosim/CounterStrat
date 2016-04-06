@@ -952,4 +952,45 @@ there.
 /* Larger than Desktop HD */
 body {
   background-color: white;
+  overflow: hidden;
+}
+
+header {
+  height: 50px;
+  margin: 0 0 70px 0;
+}
+
+header .logo {
+  height: 38px;
+  width: 50px;
+  float: left;
+  margin: 30px 0 0 30px;
+}
+
+header nav {
+  margin: 30px 30px 0 0;
+  float: left;
+}
+
+header nav a {
+  color: rgba(0, 0, 0, 0.7);
+  display: inline-block;
+  margin-left: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+header nav a:link {
+  text-decoration: none;
+}
+
+header nav a:hover {
+  color: black;
+}
+
+canvas #map {
+  width: 500px;
+  height: 500px;
+  background-color: grey;
 }

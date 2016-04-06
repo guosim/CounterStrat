@@ -9,11 +9,17 @@ html(lang="en")
 		link(rel="stylesheet", href="stylesheets/css/style.css")
 		link(rel="icon", type="image/png", href="images/favicon.png")
 	body
-		.container
-			.row
-				.one-half.column
-					h4 Page
-					p This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the
+		header
+			.logo.button
+			nav
+				a(href="").button New Strategy
+				a(href="").button Your Strategies
 
+		.container-fluid.u-cf
+			.row
+				.four.columns
+					p roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+				.eight.columns
+					canvas#map
 		script(src="/js/jquery-2.2.1.min.js")
 		script(src="/js/functions.js")
