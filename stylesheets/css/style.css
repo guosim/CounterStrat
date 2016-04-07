@@ -953,44 +953,47 @@ there.
 body {
   background-color: white;
   overflow: hidden;
+  height: 100%;
 }
 
-header {
-  height: 50px;
-  margin: 0 0 70px 0;
+nav {
+  margin: 50px 0 50px 80px;
 }
 
-header .logo {
-  height: 38px;
-  width: 50px;
-  float: left;
-  margin: 30px 0 0 30px;
-}
-
-header nav {
-  margin: 30px 30px 0 0;
-  float: left;
-}
-
-header nav a {
-  color: rgba(0, 0, 0, 0.7);
-  display: inline-block;
+nav select {
   margin-left: 20px;
-  font-weight: 700;
-  font-size: 16px;
-  text-transform: uppercase;
+  width: 150px;
 }
 
-header nav a:link {
-  text-decoration: none;
+.tree .root {
+  position: relative;
+  margin-left: 230px;
 }
 
-header nav a:hover {
-  color: black;
+.tree .root textarea {
+  width: 200px;
+  height: 100px;
+  white-space: normal;
+  text-align: justify;
+  -moz-text-align-last: center;
+  text-align-last: center;
 }
 
-canvas #map {
-  width: 500px;
-  height: 500px;
-  background-color: grey;
+.tree .root .new-node {
+  padding: 0 10px;
+  position: absolute;
+  bottom: 25px;
+  right: 6px;
+  color: #d3d3d3;
+}
+
+.tree .root .new-node:hover {
+  color: #33c3f0;
+}
+
+.map {
+  position: absolute;
+  right: 0;
+  height: 94%;
+  width: auto;
 }

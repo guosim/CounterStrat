@@ -1,35 +1,37 @@
 body
 	background-color: white
 	overflow: hidden
+	height: 100%
 
-header
-	height: 50px
-	margin: 0 0 70px 0
-	.logo
-		height: 38px
-		width: 50px
-		float: left
-		margin: 30px 0 0 30px
+nav
+	margin: 50px 0 50px 80px
+	select
+		margin-left: 20px
+		width: 150px
 
-	nav
-		margin: 30px 30px 0 0
-		float: left
-		a
-			color: rgba(0,0,0,.7)
-			display: inline-block
-			margin-left: 20px
-			font:
-				weight: 700
-				size: 16px
-			text-transform: uppercase
-			&:link
-				text-decoration: none
+.tree
+	.root
+		position: relative
+		margin-left: 230px
+		textarea
+			width: 200px
+			height: 100px
+			white-space: normal
+			text-align: justify
+			-moz-text-align-last: center
+			text-align-last: center
+
+		.new-node
+			padding: 0 10px
+			position: absolute
+			bottom: 25px
+			right: 6px
+			color: #d3d3d3
 			&:hover
-				color: rgba(0,0,0,1)
+				color: #33c3f0
 
-canvas
-	#map
-		width: 500px
-		height: 500px
-		background-color: grey
-
+.map
+	position: absolute
+	right: 0
+	height: 94%
+	width: auto
