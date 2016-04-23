@@ -965,12 +965,9 @@ nav select {
   width: 150px;
 }
 
-.tree .root {
+textarea {
   position: relative;
   margin-left: 230px;
-}
-
-.tree .root textarea {
   width: 200px;
   height: 100px;
   white-space: normal;
@@ -979,21 +976,25 @@ nav select {
   text-align-last: center;
 }
 
-.tree .root .new-node {
-  padding: 0 10px;
-  position: absolute;
-  bottom: 25px;
-  right: 6px;
+.root {
+  margin-left: 230px;
+}
+
+.new-node {
+  padding: 0 0px;
+  position: relative;
+  top: 5px;
+  right: 65px;
   color: #d3d3d3;
 }
 
-.tree .root .new-node:hover {
+.new-node:hover {
   color: #33c3f0;
 }
 
 .map {
   position: absolute;
   right: 0;
-  height: 94%;
+  height: 640px;
   width: auto;
 }

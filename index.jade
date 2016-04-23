@@ -11,24 +11,16 @@ html(lang="en")
 		link(rel="icon", type="image/png", href="images/favicon.png")
 	body
 		.row
-			.five.columns
+			.seven.columns
 				nav
-					a.button.button-primary New Strategy
-					select
-						option(value="") Your Strategies
+					a.button.button-primary#create Create
+
 					select
 						option(value="dust2") Dust 2
 						option(value="mirage") Mirage
 						option(value="cache") Cache
-				.tree.u-cf
-					.root
-						textarea
-						span.fa-stack.new-node
-							i.fa.fa-circle.fa-stack-2x
-							i.fa.fa-plus.fa-stack-1x.fa-inverse
 
-
-			.seven.columns.u-full-width
+			.five.columns.u-full-width
 					image(class="map" src="images/dust2.jpg")
 		script(src="/js/jquery-2.2.1.min.js")
 		script(src="/js/functions.js")
