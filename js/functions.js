@@ -46,18 +46,22 @@ $(document).ready(function() {
 			  addClick(mouseX, mouseY, false);
 			  redraw();
 			});
+
 			$("canvas.node" + $num).mousemove(function(e){
 			  if(paint){
 			    addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
 			    redraw();
 			  }
 			});
+
 			$("canvas.node" + $num).mouseup(function(e){
 			  paint = false;
 			});
+
 			$("canvas.node" + $num).mouseleave(function(e){
 			  paint = false;
 			});
+
 			var clickX = new Array();
 			var clickY = new Array();
 			var clickDrag = new Array();
@@ -83,7 +87,6 @@ $(document).ready(function() {
 			     }else{
 			       context.moveTo(clickX[i], clickY[i]);
 			     }
-			     //console.log(clickX[i], clickY[i])
 			     context.lineTo(clickX[i], clickY[i]);
 			     context.closePath();
 			     context.stroke();
