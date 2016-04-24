@@ -3,7 +3,7 @@ html(lang="en")
 	head
 		meta(charset="utf-8")
 		title CounterStrat
-		meta(name="description", content="Easy and simple ways to get into competitive CounterStrike")
+		meta(name="description", content="The simplest way to plan, create, and share competitive CounterStrike strategies")
 		meta(name="author", content="Henry Wu, Dulce Rios")
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		link(rel="stylesheet", href="stylesheets/css/jquery-ui.min.css")
@@ -13,11 +13,13 @@ html(lang="en")
 		.row
 			.seven.columns#left
 				nav
+					a(href="http://guosim.github.io/CounterStrat/")
+						image(src="images/cs_logo.png")#logo
 					a.button.button-primary#create Add
 					a.button#save Save
 					select#select-map
 						option(value="dust2") Dust 2
-						option(value="mirage") Mirage
+						option(value="mirage1") Mirage
 						option(value="cache") Cache
 						option(value="cobble") Cobblestone	
 						option(value="inferno") Inferno	
@@ -26,6 +28,11 @@ html(lang="en")
 						option(value="dust2c") Dust 2 Callouts
 			.five.columns#right
 				image(class="map" src="images/dust2.jpg")
-		script(src="https://rawgit.com/guosim/CounterStrat/gh-pages/js/jquery-2.2.1.min.js")
-		script(src="https://rawgit.com/guosim/CounterStrat/gh-pages/js/jquery-ui.min.js")
-		script(src="https://rawgit.com/guosim/CounterStrat/gh-pages/js/functions.js")
+		//script(src="https://rawgit.com/guosim/CounterStrat/gh-pages/js/jquery-2.2.1.min.js")
+		//script(src="https://rawgit.com/guosim/CounterStrat/gh-pages/js/jquery-ui.min.js")
+		//script(src="https://rawgit.com/guosim/CounterStrat/gh-pages/js/functions.js")
+		script(src="/js/jquery-2.2.1.min.js")
+		script(src="/js/jquery-ui.min.js")
+		script(src="/js/functions.js")
+	footer
+		p <a href="https://github.com/guosim/CounterStrat">Source Code</a>. Maps by <a href="http://simpleradar.com">Simple radar</a>. Canvas drawing app by <a href="http://www.williammalone.com/articles/create-html5-canvas-javascript-drawing-app">William Malone</a>. 

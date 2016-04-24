@@ -12,7 +12,7 @@ $(document).ready(function() {
 		function() {
 			$num = $num + 1;
 			//create node, add classes
-			$('<div class="node' + $num + '"><div class="textbox box' + $num + '" contentEditable="true"> #' + $num + ' Edit here!</div></div>').appendTo('#left').resizable().draggable();
+			$('<div class="node' + $num + '"><div class="textbox box' + $num + '" contentEditable="true"> #' + $num + '</div></div>').appendTo('#left');
 			$('.box'+$num)
 				.resizable()
 				.draggable()
@@ -34,8 +34,62 @@ $(document).ready(function() {
 						});
 				});
 			$('<canvas class="node' + $num + '"></canvas>').appendTo("#right");
-			//console.log($("canvas.node" + $num)); 
-			$("canvas.node" + $num).init();
+
+			context = $("canvas.node" + $num).get(0).getContext("2d");
+			//console.log($("canvas.node" + $num).get(0).getContext("2d"));
+			//Malone's canvas
+			$("canvas.node" + $num).mousedown(function(e){
+			  var mouseX = e.pageX - this.offsetLeft;
+			  var mouseY = e.pageY - this.offsetTop;
+			  paint = true;
+			  console.log(mouseX, mouseY, paint);
+			  addClick(mouseX, mouseY, false);
+			  redraw();
+			});
+			$("canvas.node" + $num).mousemove(function(e){
+			  if(paint){
+			    addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
+			    redraw();
+			  }
+			});
+			$("canvas.node" + $num).mouseup(function(e){
+			  paint = false;
+			});
+			$("canvas.node" + $num).mouseleave(function(e){
+			  paint = false;
+			});
+			var clickX = new Array();
+			var clickY = new Array();
+			var clickDrag = new Array();
+			var paint;
+
+			function addClick(x, y, dragging)
+			{
+			  clickX.push(x);
+			  clickY.push(y);
+			  clickDrag.push(dragging);
+			}
+			function redraw(){
+			  context.clearRect(0, 0, 700, 700); // Clears the canvas
+
+			  context.strokeStyle = "#32cd32";
+			  context.lineJoin = "round";
+			  context.lineWidth = 1;
+						
+			  for(var i=0; i < clickX.length; i++) {		
+			    context.beginPath();
+			    if(clickDrag[i] && i){
+			      context.moveTo(clickX[i-1], clickY[i-1]);
+			     }else{
+			       context.moveTo(clickX[i], clickY[i]);
+			     }
+			     //console.log(clickX[i], clickY[i])
+			     context.lineTo(clickX[i], clickY[i]);
+			     context.closePath();
+			     context.stroke();
+			  }
+			}
+
 			$("canvas").css("display", "none");
 	});
 
