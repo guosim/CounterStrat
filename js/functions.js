@@ -33,33 +33,30 @@ $(document).ready(function() {
 							}
 						});
 				});
-			$('<canvas class="node' + $num + '"></canvas>').appendTo("#right");
-
+			$('<canvas class="node' + $num + '" width="700" height="700"></canvas>').appendTo("#right");
 			context = $("canvas.node" + $num).get(0).getContext("2d");
-			//console.log($("canvas.node" + $num).get(0).getContext("2d"));
 			//Malone's canvas
 			$("canvas.node" + $num).mousedown(function(e){
-			  var mouseX = e.pageX - this.offsetLeft;
-			  var mouseY = e.pageY - this.offsetTop;
-			  paint = true;
-			  console.log(mouseX, mouseY, paint);
-			  addClick(mouseX, mouseY, false);
-			  redraw();
+				var mouseX = e.pageX - this.offsetLeft;
+				var mouseY = e.pageY - this.offsetTop;
+				paint = true;
+				addClick(mouseX, mouseY, false);
+				redraw();
 			});
 
 			$("canvas.node" + $num).mousemove(function(e){
-			  if(paint){
-			    addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
-			    redraw();
-			  }
+				if(paint){
+					addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
+					redraw();
+				}
 			});
 
 			$("canvas.node" + $num).mouseup(function(e){
-			  paint = false;
+				paint = false;
 			});
 
 			$("canvas.node" + $num).mouseleave(function(e){
-			  paint = false;
+				paint = false;
 			});
 
 			var clickX = new Array();
@@ -69,28 +66,28 @@ $(document).ready(function() {
 
 			function addClick(x, y, dragging)
 			{
-			  clickX.push(x);
-			  clickY.push(y);
-			  clickDrag.push(dragging);
+				clickX.push(x);
+				clickY.push(y);
+				clickDrag.push(dragging);
 			}
 			function redraw(){
-			  context.clearRect(0, 0, 700, 700); // Clears the canvas
+				context.clearRect(0, 0, 700, 700); // Clears the canvas
 
-			  context.strokeStyle = "#32cd32";
-			  context.lineJoin = "round";
-			  context.lineWidth = 1;
+				context.strokeStyle = "#32cd32";
+				context.lineJoin = "round";
+				context.lineWidth = 1;
 						
-			  for(var i=0; i < clickX.length; i++) {		
-			    context.beginPath();
-			    if(clickDrag[i] && i){
-			      context.moveTo(clickX[i-1], clickY[i-1]);
-			     }else{
-			       context.moveTo(clickX[i], clickY[i]);
-			     }
-			     context.lineTo(clickX[i], clickY[i]);
-			     context.closePath();
-			     context.stroke();
-			  }
+				for(var i=0; i < clickX.length; i++) {		
+					context.beginPath();
+					if(clickDrag[i] && i){
+						context.moveTo(clickX[i-1], clickY[i-1]);
+					}else{
+						context.moveTo(clickX[i], clickY[i]);
+					}
+					console.log(context.lineTo(clickX[i], clickY[i]));
+					context.closePath();
+					context.stroke();
+				}
 			}
 
 			$("canvas").css("display", "none");
