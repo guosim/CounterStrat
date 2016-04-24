@@ -7,6 +7,7 @@
     <meta name="author" content="Henry Wu, Dulce Rios">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheets/css/jquery-ui.min.css">
     <link rel="stylesheet" href="stylesheets/css/style.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
   </head>
@@ -14,18 +15,30 @@
     <div class="row">
       <div class="seven columns">
         <nav><a id="create" class="button button-primary">Create</a>
-          <select>
+          <select id="select-map">
             <option value="dust2">Dust 2</option>
             <option value="mirage">Mirage</option>
             <option value="cache">Cache</option>
+            <option value="cobble">Cobblestone	</option>
+            <option value="inferno">Inferno	</option>
+            <option value="train">Train</option>
+            <option value="overpass">Overpass	</option>
+            <option value="dust2c">Dust 2 Callouts</option>
           </select>
         </nav>
+        <div class="node">
+          <div class="textbox">
+            <div contentEditable="true" class="draggable resizable"></div>
+          </div>
+          <div class="drawing"></div>
+        </div>
       </div>
-      <div class="five columns u-full-width">
+      <div class="five columns">
         <image src="images/dust2.jpg" class="map"></image>
       </div>
     </div>
     <script src="/js/jquery-2.2.1.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
     <script src="/js/functions.js"></script>
   </body>
 </html>

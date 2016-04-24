@@ -1,24 +1,26 @@
 $(document).ready(function() {
 
 
-	$("#map").change(function(){
-		$("img[name=image-swap]").attr("src",$(this).val());
-
+	$("#select-map").change(
+		function() {
+			console.log('map changed');
+			$('.map').attr('src','images/' + $('#select-map').val() + '.jpg');
+	});
 
 	$('#create').click(
 		function() {
-			alert("?");
-			var someText = "my dynamic text";
+			console.log('create box');
+			var initialText = "Edit here!";
 			var node = $('<div class="frame">').append(someText).click(function () { alert("click!"); });
 			$(this).append(newDiv);
 	  }
 	)
 
-	$(".frame").draggable()
+	/*$(".frame").draggable()
 	  .click(function() {
 	    $(this).draggable( {disabled: false});
 	}).dblclick(function() {
 	    $(this).draggable({ disabled: true });
-	});
+	});*/
 
 });
