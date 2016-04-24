@@ -12,7 +12,7 @@ html(lang="en")
 		link(rel="icon", type="image/png", href="images/favicon.png")
 	body
 		.row
-			.seven.columns
+			.seven.columns#left
 				nav
 					a.button.button-primary#create Create
 					select#select-map
@@ -24,11 +24,7 @@ html(lang="en")
 						option(value="train") Train
 						option(value="overpass") Overpass	
 						option(value="dust2c") Dust 2 Callouts
-				.node
-					.textbox
-						.draggable.resizable(contentEditable='true')
-					.drawing
-			.five.columns
+			.five.columns#right
 				image(class="map" src="images/dust2.jpg")
 		script(src="/js/jquery-2.2.1.min.js")
 		script(src="/js/jquery-ui.min.js")

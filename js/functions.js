@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-
+var $numBox = 0;
 	$("#select-map").change(
 		function() {
 			console.log('map changed');
@@ -9,18 +9,10 @@ $(document).ready(function() {
 
 	$('#create').click(
 		function() {
-			console.log('create box');
-			var initialText = "Edit here!";
-			var node = $('<div class="frame">').append(someText).click(function () { alert("click!"); });
-			$(this).append(newDiv);
-	  }
-	)
+			$numBox = $numBox + 1;
+			$('<div class="node"><div class="textbox" contentEditable="true"> #' + $numBox + ' Edit here!</div></div>').appendTo('#left');
+			$(".textbox").resizable().draggable();
+	  });
 
-	/*$(".frame").draggable()
-	  .click(function() {
-	    $(this).draggable( {disabled: false});
-	}).dblclick(function() {
-	    $(this).draggable({ disabled: true });
-	});*/
 
 });
