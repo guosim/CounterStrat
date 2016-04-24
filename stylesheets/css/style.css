@@ -995,7 +995,7 @@ nav a {
 
 canvas {
   position: absolute;
-  right: 0;
   height: 700px;
   width: 700px;
+  z-index: 9001;
 }
