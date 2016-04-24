@@ -965,10 +965,14 @@ nav select {
   width: 150px;
 }
 
+nav a {
+  margin-left: 20px;
+}
+
 .map {
   position: absolute;
   right: 0;
-  height: 640px;
+  height: 800px;
   width: auto;
 }
 
@@ -987,4 +991,11 @@ nav select {
 
 .textbox:focus {
   border: 2px solid #33c3f0;
+}
+
+canvas {
+  position: absolute;
+  right: 0;
+  height: 800px;
+  width: 800px;
 }
