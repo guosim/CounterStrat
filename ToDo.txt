@@ -1,0 +1,7 @@
+add overlay for canvas
+change mouse on cursor down
+add ppl dots, flash and smoke
+add localstorage
+change .click to .mousedown so dragging selects canvas
+add landing page
+Add -> Add Play
